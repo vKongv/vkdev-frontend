@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <WebHeader/>
+    <web-header />
     <div>
       <logo/>
       <h1 class="title">
@@ -19,7 +19,7 @@
 
 <script>
 import Logo from '~components/Logo.vue'
-import WebHeader from '~components/header.vue'
+import WebHeader from '~components/Header.vue'
 
 export default {
   components: {
