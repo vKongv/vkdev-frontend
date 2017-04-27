@@ -5,12 +5,15 @@ module.exports = {
     browser: true,
     node: true
   },
-  extends: 'standard',
+  extends: 'airbnb',
   // required to lint *.vue files
   plugins: [
     'html'
   ],
   // add your custom rules here
-  rules: {},
+  rules: {
+      "indent": ["error", 4],
+      "import/no-unresolved": "off",
+  },
   globals: {}
 }
