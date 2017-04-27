@@ -18,15 +18,15 @@
 </template>
 
 <script>
-import Logo from '~components/Logo.vue'
-import WebHeader from '~components/Header.vue'
+import Logo from '~components/Logo.vue';
+import WebHeader from '~components/Header.vue';
 
 export default {
-  components: {
-    Logo,
-    WebHeader
-  }
-}
+    components: {
+        Logo,
+        WebHeader,
+    },
+};
 </script>
 
 <style>
