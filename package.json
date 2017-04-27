@@ -5,6 +5,7 @@
   "author": "duduvien <vivien@vkdevmy.com>, vkongv <kong@vkdevmy.com>",
   "private": true,
   "dependencies": {
+    "bootstrap-vue": "^0.14.0",
     "nuxt": "latest"
   },
   "scripts": {
