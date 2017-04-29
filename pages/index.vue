@@ -1,6 +1,7 @@
 <template>
   <section class="container">
     <web-header />
+    <div class="test" />
     <div>
       <logo/>
       <h1 class="title">
@@ -29,7 +30,16 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+:root {
+    --px-one: 100px;
+    --red: red;
+}
+.test {
+    height: var(--px-one);
+    width: var(--px-one);
+    background: var(--red);
+}
 .container
 {
   min-height: 100vh;

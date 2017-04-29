@@ -7,7 +7,9 @@
   "dependencies": {
     "bootstrap-vue": "^0.14.0",
     "eslint-config-airbnb": "^14.1.0",
-    "nuxt": "latest"
+    "nuxt": "latest",
+    "postcss-cssnext": "^2.10.0",
+    "postcss-custom-properties": "^5.0.2"
   },
   "scripts": {
     "dev": "nuxt",
