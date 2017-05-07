@@ -1,26 +1,23 @@
 <template>
 <div>
-    <section class="header bg-light-yellow pa4">
-        <h1 class="f-headline b lh-solid oh measure mt0 mb5 nowrap ws-normal-ns overflow-hidden word-wrap tc">VK</h1>
-    </section>
+    <web-header />
     <section class="content pa4">
-        <web-header />
+        <practice />
     </section>
-    <section class="footer bg-light-yellow pa4">
-        <h3 class="f3 center tc ma0">Yellow is cool right?</h3>
-    </section>
+    <web-footer />
 </div>
 </template>
 
 <script>
-import Logo from '~components/Logo.vue';
 import WebHeader from '~components/Header.vue';
-
+import Practice from '~components/Practice.vue';
+import WebFooter from '~components/Footer.vue';
 
 export default {
     components: {
-        Logo,
         WebHeader,
+        Practice,
+        WebFooter,
     },
 };
 </script>
