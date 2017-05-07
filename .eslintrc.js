@@ -14,6 +14,8 @@ module.exports = {
   rules: {
       "indent": ["error", 4],
       "import/no-unresolved": "off",
+      "import/no-extraneous-dependencies": "off",
+      "global-require": "off",
   },
   globals: {}
 }

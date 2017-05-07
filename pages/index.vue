@@ -1,5 +1,6 @@
 <template>
   <section class="container">
+    <web-header />
     <div>
       <logo/>
       <h1 class="title">
@@ -18,15 +19,17 @@
 
 <script>
 import Logo from '~components/Logo.vue';
+import WebHeader from '~components/Header.vue';
 
 export default {
     components: {
         Logo,
+        WebHeader,
     },
 };
 </script>
 
-<style>
+<style scoped>
 .container
 {
   min-height: 100vh;
