@@ -1,20 +1,15 @@
 <template>
-<section class="container">
-    <web-header />
-	<div>
-		<logo/>
-		<h1 class="title">
-            NUXT
-        </h1>
-		<h2 class="subtitle">
-            Universal Vue.js Application
-        </h2>
-		<div class="links">
-			<a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-			<a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">Github</a>
-		</div>
-	</div>
-</section>
+<div>
+    <section class="header bg-light-yellow pa4">
+        <h1 class="f-headline b lh-solid oh measure mt0 mb5 nowrap ws-normal-ns overflow-hidden word-wrap tc">VK</h1>
+    </section>
+    <section class="content pa4">
+        <web-header />
+    </section>
+    <section class="footer bg-light-yellow pa4">
+        <h3 class="f3 center tc ma0">Yellow is cool right?</h3>
+    </section>
+</div>
 </template>
 
 <script>
@@ -38,7 +33,6 @@ export default {
 	align-items: center;
 	text-align: center;
 }
-
 .title {
 	font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 	/* 1 */
@@ -48,7 +42,6 @@ export default {
 	color: #35495e;
 	letter-spacing: 1px;
 }
-
 .subtitle {
 	font-weight: 300;
 	font-size: 42px;
@@ -56,7 +49,6 @@ export default {
 	word-spacing: 5px;
 	padding-bottom: 15px;
 }
-
 .links {
 	padding-top: 15px;
 }

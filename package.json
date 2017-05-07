@@ -5,11 +5,11 @@
   "author": "duduvien <vivien@vkdevmy.com>, vkongv <kong@vkdevmy.com>",
   "private": true,
   "dependencies": {
-    "bootstrap-vue": "^0.14.0",
     "eslint-config-airbnb": "^14.1.0",
     "nuxt": "latest",
     "postcss-cssnext": "^2.10.0",
-    "postcss-custom-properties": "^5.0.2"
+    "postcss-custom-properties": "^5.0.2",
+    "tachyons": "^4.7.1"
   },
   "scripts": {
     "dev": "nuxt",
