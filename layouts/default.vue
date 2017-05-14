@@ -1,9 +1,11 @@
 <template>
-    <div class='sans-serif'>
+    <div>
         <nuxt/>
     </div>
 </template>
 
 <style>
-
+body {
+    font-family: Muli;
+}
 </style>

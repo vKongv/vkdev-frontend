@@ -31,7 +31,6 @@ export default {
 .footer {
     width: 100%;
     height: 70px;
-    font-family: Montserrat;
     letter-spacing: 4px;
     color: #000000;
     display: flex;

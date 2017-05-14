@@ -3,11 +3,11 @@
     <web-header />
     <section class="content">
         <div class="our-principles ph6-l ph3 pv4 white">
-            <div class="principle pa3 measure" v-for="(principle, index) in principles">
+            <div class="principle pa3 measure tc" v-for="(principle, index) in principles">
                 <img class="image" :src="principle.img">
                 </img>
-                <h3 class="f4 db"> Principle #{{index + 1}}: {{principle.title}}</h3>
-                <p class="description lh-copy f7-l f5">{{principle.desc}}</p>
+                <h3 class="f5 db tracked ttu fw4 tc">{{principle.title}}</h3>
+                <p class="description lh-copy f6-l f5 fw3 tc tracked">{{principle.desc}}</p>
             </div>
         </div>
     </section>
@@ -27,17 +27,17 @@ import p3Picture from '../images/principles/p3.png';
 const principles = [
     {
         title: 'Quality',
-        desc: 'We strike for the best quality',
+        desc: 'We strike for the best quality in every project',
         img: p1Picture,
     },
     {
-        title: 'Quality',
-        desc: 'We strike for the best quality',
+        title: 'Growth',
+        desc: 'We care about your business growth',
         img: p2Picture,
     },
     {
-        title: 'Quality',
-        desc: 'We strike for the best quality',
+        title: 'Collaboration',
+        desc: 'We collaborate with every stakeholder to ensure we align with your business requirements',
         img: p3Picture,
     },
 ];
@@ -70,6 +70,7 @@ export default {
     @media(--for-desktop) {
         justify-content: space-between;
         flex-direction: row;
+        align-items: stretch;
     }
 
     & .principle {
@@ -88,8 +89,6 @@ export default {
         }
 
         & .description {
-            text-align: justify;
-            text-justify: inter-word;
         }
     }
 }
