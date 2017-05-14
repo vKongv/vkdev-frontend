@@ -12,6 +12,7 @@ module.exports = {
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+            { rel: 'stylesheet', type: 'text/css', href: 'http://fonts.googleapis.com/css?family=Muli:300,400|Montserrat:400,400' },
         ],
     },
     /*
