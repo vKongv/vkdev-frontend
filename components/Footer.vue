@@ -1,6 +1,6 @@
 <template>
-    <div class="footer bg-white pl5 pr5 pt3 pb3">
-        <p>@2017, COPYRIGHTED BY VK DEV</p>
+    <div class="footer bg-white pv2 ph5-l pv3-l f7">
+        <span>@2017 VK DEV</span>
         <div class="media-item">
             <span>FOLLOW US AT </span> &nbsp;
             <a :href="fbLink" target="_blank"><img class="logo" :src="fblogo"></img></a>
@@ -26,16 +26,22 @@ export default {
 </script>
 
 <style scoped>
+@import '../assets/main.css';
+
 .footer {
     width: 100%;
     height: 70px;
     font-family: Montserrat;
-    font-size: 12px;
     letter-spacing: 4px;
     color: #000000;
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: space-between;
+
+    @media(--for-desktop) {
+        flex-direction: row;
+    }
 }
 
 .logo {
@@ -43,7 +49,8 @@ export default {
 }
 
 .media-item {
-    display: flex; align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 </style>
