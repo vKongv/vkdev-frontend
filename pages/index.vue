@@ -2,11 +2,11 @@
 <div>
     <section class="content pa4">
         <div class="our-principles ph6-l ph3 pv4 white">
-            <div class="principle pa3" v-for="principle in principles">
-                <div class="image bg-white">
-                </div>
-                <h3 class="f4 db"> Principle #{{principle}}</h3>
-                <p class="description lh-copy f7-l f5 measure">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <div class="principle pa3 measure" v-for="(principle, index) in principles">
+                <img class="image" :src="principle.img">
+                </img>
+                <h3 class="f4 db"> Principle #{{index + 1}}: {{principle.title}}</h3>
+                <p class="description lh-copy f7-l f5">{{principle.desc}}</p>
             </div>
         </div>
     </section>
@@ -19,7 +19,27 @@ import WebHeader from '~components/Header.vue';
 import Practice from '~components/Practice.vue';
 import WebFooter from '~components/Footer.vue';
 
-const principles = [1, 2, 3];
+import p1Picture from '../images/principles/p1.png';
+import p2Picture from '../images/principles/p2.png';
+import p3Picture from '../images/principles/p3.png';
+
+const principles = [
+    {
+        title: 'Quality',
+        desc: 'We strike for the best quality',
+        img: p1Picture,
+    },
+    {
+        title: 'Quality',
+        desc: 'We strike for the best quality',
+        img: p2Picture,
+    },
+    {
+        title: 'Quality',
+        desc: 'We strike for the best quality',
+        img: p3Picture,
+    },
+];
 
 export default {
     data() {
