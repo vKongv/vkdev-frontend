@@ -3,21 +3,22 @@ module.exports = {
   ** Headers of the page
   */
     head: {
-        title: 'starter',
+        title: 'VK Dev',
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
             { hid: 'description', name: 'description', content: 'Nuxt.js project' },
+            { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+            { rel: 'stylesheet', type: 'text/css', href: 'http://fonts.googleapis.com/css?family=Muli:300,400|Montserrat:400,400' },
         ],
     },
     /*
-    ** Customize the progress-bar color
     */
     loading: { color: '#3B8070' },
-    plugins: ['~plugins/bootstrap-vue'],
+    css: ['tachyons/css/tachyons.css'],
     /*
     ** Build configuration
     */
@@ -39,6 +40,7 @@ module.exports = {
         ** postcss plugins
         */
         postcss: [
+            require('postcss-import')(),
             require('postcss-cssnext')({
                 browsers: ['last 2 versions'],
             }),

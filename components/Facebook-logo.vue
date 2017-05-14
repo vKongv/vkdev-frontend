@@ -1,11 +1,11 @@
 <template>
-<div class="VKLogo">
+<div>
     <img class="logo-image" :src="image"/>
 </div>
 </template>
 
 <script>
-import image from '../images/logo-188x188@2x.png';
+import image from '../images/fb-31x33@2x.png';
 
 export default {
     data() {
@@ -17,15 +17,6 @@ export default {
 </script>
 
 <style scoped>
-.VKLogo {
-    display: flex;
-    align-items: center;
-    border: 2px solid #000000;
-    padding: 15px;
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
-}
 
 .logo-image {
     display: inline-block;
