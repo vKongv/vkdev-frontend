@@ -1,8 +1,14 @@
 <template>
 <div>
-    <web-header />
     <section class="content pa4">
-        <practice />
+        <div class="our-principles ph6-l ph3 pv4 white">
+            <div class="principle pa3" v-for="principle in principles">
+                <div class="image bg-white">
+                </div>
+                <h3 class="f4 db"> Principle #{{principle}}</h3>
+                <p class="description lh-copy f7-l f5 measure">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+        </div>
     </section>
     <web-footer />
 </div>
@@ -13,7 +19,14 @@ import WebHeader from '~components/Header.vue';
 import Practice from '~components/Practice.vue';
 import WebFooter from '~components/Footer.vue';
 
+const principles = [1, 2, 3];
+
 export default {
+    data() {
+        return {
+            principles,
+        };
+    },
     components: {
         WebHeader,
         Practice,
@@ -23,30 +36,41 @@ export default {
 </script>
 
 <style scoped>
-.container {
-	min-height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-}
-.title {
-	font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-	/* 1 */
-	display: block;
-	font-weight: 300;
-	font-size: 100px;
-	color: #35495e;
-	letter-spacing: 1px;
-}
-.subtitle {
-	font-weight: 300;
-	font-size: 42px;
-	color: #526488;
-	word-spacing: 5px;
-	padding-bottom: 15px;
-}
-.links {
-	padding-top: 15px;
+@import '../assets/main.css';
+
+.our-principles {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.85);
+    min-height: 300px;
+    margin: 0 -2rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @media(--for-desktop) {
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    & .principle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media(--for-desktop) {
+            width: 256px;
+        }
+
+        & .image {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+
+        & .description {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+    }
 }
 </style>
