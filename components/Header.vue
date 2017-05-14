@@ -1,6 +1,6 @@
 <template>
-    <div class="header bg-white pl5 pr5 pt3 pb3">
-        <div class="f5 fl w-40">
+    <div class="header bg-white ph5 pv3">
+        <div class="f5 fl w-40 menu">
             <logo></logo>
         </div>
         <div class="f5 fl w-60 menu">
@@ -26,21 +26,34 @@ export default {
 </script>
 
 <style scoped>
+@import '../assets/main.css';
+
 .header {
     width: 100%;
-    height: 140px;
+    height: 280px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-family: Montserrat;
     letter-spacing: 4px;
     color: #000000;
+    flex-direction: column;
+
+    @media(--for-desktop) {
+        flex-direction: row;
+        height: 140px;
+    }
 }
 
 .menu {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: column;
+
+    @media(--for-desktop) {
+        flex-direction: row;
+    }
 }
 
 .menu-item {

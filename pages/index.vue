@@ -1,6 +1,7 @@
 <template>
 <div>
-    <section class="content pa4">
+    <web-header />
+    <section class="content">
         <div class="our-principles ph6-l ph3 pv4 white">
             <div class="principle pa3" v-for="principle in principles">
                 <div class="image bg-white">
@@ -42,7 +43,6 @@ export default {
     display: flex;
     background-color: rgba(0, 0, 0, 0.85);
     min-height: 300px;
-    margin: 0 -2rem;
     justify-content: center;
     align-items: center;
     flex-direction: column;
