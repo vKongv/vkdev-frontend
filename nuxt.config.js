@@ -11,7 +11,7 @@ module.exports = {
             { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
         ],
         link: [
-            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+            { rel: 'icon', type: 'image/x-icon', href: '/vklogo.ico' },
             { rel: 'stylesheet', type: 'text/css', href: 'http://fonts.googleapis.com/css?family=Muli:300,400|Montserrat:400,400' },
         ],
     },
