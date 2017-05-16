@@ -4,7 +4,7 @@
             <logo></logo>
         </div>
         <div class="f5 fl w-60 menu">
-            <a class="menu-item pt2 pb2" v-for="header in headers" > {{ header }} </a>
+            <a class="menu-item pt2 pb2 ttu" v-for="header in headers" :href="header.link" > {{ header.title }} </a>
         </div>
     </div>
 </template>
@@ -15,7 +15,24 @@ import logo from './logo.vue';
 export default {
     data() {
         return {
-            headers: ['HOME', 'FEATURED NEWS', 'PORTFOLIOS', 'VK TEAM'],
+            headers: [
+                {
+                    title: 'HOME',
+                    link: '/',
+                },
+                {
+                    title: 'FEATURED NEWS',
+                    link: '/featured-news',
+                },
+                {
+                    title: 'PORTFOLIOS',
+                    link: '/',
+                },
+                {
+                    title: 'VK TEAM',
+                    link: '/',
+                },
+            ],
         };
     },
 
@@ -58,6 +75,7 @@ export default {
 
 .menu-item {
     display: inline-block;
+    text-decoration: none;
 
     &:hover {
         cursor: pointer;
@@ -65,7 +83,6 @@ export default {
         transition: opacity .15s ease-in;
         border-bottom: 3px solid #000000;
     }
-
 }
 
 .logo {
