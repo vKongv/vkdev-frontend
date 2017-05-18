@@ -26,7 +26,7 @@ export default {
                 },
                 {
                     title: 'PORTFOLIOS',
-                    link: '/',
+                    link: '/portfolios',
                 },
                 {
                     title: 'VK TEAM',

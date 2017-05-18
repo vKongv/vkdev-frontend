@@ -26,7 +26,7 @@ import WebFooter from '~components/Footer.vue';
 import p1Picture from '../../images/principles/p1.png';
 import p2Picture from '../../images/principles/p2.png';
 import p3Picture from '../../images/principles/p3.png';
-import testPicture from '../../images/test-2.png';
+import testPicture from '../../images/featured-news/test-2.png';
 
 const posts = [
     {
@@ -119,8 +119,6 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /*column-count: 3;*/
-	/*column-gap: 1em;*/
     color: #ffffff;
     height: auto;
     width: 100%;
