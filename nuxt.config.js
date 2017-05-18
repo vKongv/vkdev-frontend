@@ -12,7 +12,7 @@ module.exports = {
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/vklogo.ico' },
-            { rel: 'stylesheet', type: 'text/css', href: 'http://fonts.googleapis.com/css?family=Muli:300,400|Montserrat:400,400' },
+            { rel: 'stylesheet', type: 'text/css', href: 'http://fonts.googleapis.com/css?family=Muli:300,400,700|Montserrat:400,400|Special+Elite:300,400,700' },
         ],
     },
     /*

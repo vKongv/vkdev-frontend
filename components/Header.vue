@@ -1,7 +1,7 @@
 <template>
     <div class="header bg-white ph5 pv3">
         <div class="f5 fl w-40 menu">
-            <logo></logo>
+            <a href="/"><logo></logo></a>
         </div>
         <div class="f5 fl w-60 menu">
             <a class="menu-item pt2 pb2 ttu" v-for="header in headers" :href="header.link" > {{ header.title }} </a>
@@ -76,12 +76,17 @@ export default {
 .menu-item {
     display: inline-block;
     text-decoration: none;
+    text-align: center;
 
     &:hover {
         cursor: pointer;
         opacity: .5;
         transition: opacity .15s ease-in;
         border-bottom: 3px solid #000000;
+    }
+
+    &:visited {
+        color: #000000;
     }
 }
 
