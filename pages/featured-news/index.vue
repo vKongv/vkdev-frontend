@@ -11,7 +11,6 @@
                         <h3 class="f5 db tracked ttu b tc" :style="{ color:post.fontColor }">{{post.title}}</h3>
                         <hr class="mw5 bb bw1 b--black-10">
                     </span>
-                    <span v-else style="display: none;"></span>
 
                     <div v-if="post.desc" class="lh-copy f6-l f5 fw3 txt-justify tracked" v-html="post.desc" :style="{ color:post.fontColor }"></div>
                 </div>
