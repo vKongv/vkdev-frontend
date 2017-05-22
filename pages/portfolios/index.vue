@@ -1,22 +1,21 @@
 <template>
 <div>
     <web-header />
-    <section class="ph5">
-        <div class="fl w-third-l w-100 ph3" v-for="( portfolio, index) in portfolios">
-            <article class="br2 ba dark-gray b--black-10 mv3 w-100 center card-container">
-                    <div :style="{ backgroundImage: 'url(' +  portfolio.img + ')'}" class="db w-100 br2 br--top card-img" :alt=" portfolio.title"></div>
-                    <div class="pa2 ph3-ns pb3-ns card-desc">
-                        <div class="dt w-100 mt1">
-                            <div class="dtc">
-                                <h1 class="f5 f4-ns mv0 ttu tracked"> {{  portfolio.title }} </h1>
-                            </div>
-                        </div>
-                        <p class="f6 lh-copy measure mt2 mid-gray"> {{  portfolio.desc }} </p>
+    <div class="cards ph5">
+        <article class="br2 ba dark-gray b--black-10 mv4 mt0-l w-33-l w-100 mw5" v-for="( portfolio, index) in portfolios">
+            <img :src="portfolio.img" class="db w-100 br2 br--top" :alt="portfolio.title">
+            <div class="pa2 ph3-ns pb3-ns">
+                <div class="dt w-100 mt1">
+                    <div class="dtc">
+                        <h1 class="f5 f4-ns mv0 tc ttu tracked">{{ portfolio.title }}</h1>
                     </div>
-                    <!-- <a class="f7 link dim br2 ba ph3 pv3 mb2 dib black ttu tracked" href="#0">View Details »</a> -->
-            </article>
-        </div>
-    </section>
+                </div>
+                <p class="f6 lh-copy measure mt2 mid-gray">
+                    {{ portfolio.desc }}
+                </p>
+            </div>
+        </article>
+    </div>
     <web-footer />
 </div>
 </template>
@@ -65,15 +64,20 @@ export default {
 
 <style scoped>
 @import '../../assets/main.css';
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
 .card-container {
-    width: 100%;
     height: auto;
+    /*height: 22rem;*/
     text-align: center;
     justify-content: space-between;
 
     @media(--for-desktop) {
-        height: 22rem;
+      width: 33%;
     }
 
     &:hover {
@@ -95,13 +99,17 @@ export default {
     background-color: rgba(0, 0, 0, 0.9);
 
     @media(--for-desktop) {
-        height: 55%;
+        height: 12rem;
     }
 }
 
 .card-desc {
     width: 100%;
     height: 35%;
+}
+
+.card-desc-p {
+  display: inline-block;
 }
 
 </style>

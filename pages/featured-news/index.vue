@@ -88,9 +88,6 @@ export default {
 </script>
 
 <style scoped>
-.txt-justify {
-    /*text-align: left;*/
-}
 
 .columns {
     display: flex;
