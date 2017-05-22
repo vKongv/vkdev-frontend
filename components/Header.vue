@@ -77,6 +77,7 @@ export default {
     display: inline-block;
     text-decoration: none;
     text-align: center;
+    color: #000000;
 
     &:hover {
         cursor: pointer;
