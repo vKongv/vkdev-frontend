@@ -1,6 +1,5 @@
 <template>
 <div>
-    <web-header />
     <div class="cards ph5-l ph3">
         <article class="br2 ba dark-gray b--black-10 mv4 mt0-l w-30-l w-100" v-for="( portfolio, index) in portfolios">
             <img :src="portfolio.img" class="db w-100 br2 br--top" :alt="portfolio.title">
@@ -16,7 +15,6 @@
             </div>
         </article>
     </div>
-    <web-footer />
 </div>
 </template>
 

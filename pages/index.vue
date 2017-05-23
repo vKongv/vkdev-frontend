@@ -1,6 +1,5 @@
 <template>
 <div>
-    <web-header />
     <section class="content">
         <div class="headline pa5" :style="{ backgroundImage: 'url(' + bg + ')'}">
             <h1 class="f3 f2-l lh-title fw7-l ttu tracked">
@@ -19,7 +18,6 @@
             </div>
         </div>
     </section>
-    <web-footer />
 </div>
 </template>
 

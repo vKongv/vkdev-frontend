@@ -1,6 +1,5 @@
 <template>
 <div>
-    <web-header />
     <section>
         <div class="columns ph5-l ph3 pv3">
             <div class="posts" v-for="(postsToDisplay, index) in posts">
@@ -18,7 +17,6 @@
 
         </div>
     </section>
-    <web-footer />
 </div>
 </template>
 
