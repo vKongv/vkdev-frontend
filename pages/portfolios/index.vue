@@ -1,8 +1,8 @@
 <template>
 <div>
     <web-header />
-    <div class="cards ph5">
-        <article class="br2 ba dark-gray b--black-10 mv4 mt0-l w-33-l w-100 mw5" v-for="( portfolio, index) in portfolios">
+    <div class="cards ph5-l ph3">
+        <article class="br2 ba dark-gray b--black-10 mv4 mt0-l w-30-l w-100" v-for="( portfolio, index) in portfolios">
             <img :src="portfolio.img" class="db w-100 br2 br--top" :alt="portfolio.title">
             <div class="pa2 ph3-ns pb3-ns">
                 <div class="dt w-100 mt1">
@@ -10,7 +10,7 @@
                         <h1 class="f5 f4-ns mv0 tc ttu tracked">{{ portfolio.title }}</h1>
                     </div>
                 </div>
-                <p class="f6 lh-copy measure mt2 mid-gray">
+                <p class="f6 lh-copy measure-l mt2 mid-gray">
                     {{ portfolio.desc }}
                 </p>
             </div>
