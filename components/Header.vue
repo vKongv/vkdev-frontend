@@ -30,7 +30,7 @@ export default {
                 },
                 {
                     title: 'VK TEAM',
-                    link: '/',
+                    link: '/vk-team',
                 },
             ],
         };
