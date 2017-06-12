@@ -16,6 +16,7 @@ module.exports = {
       "import/no-unresolved": "off",
       "import/no-extraneous-dependencies": "off",
       "global-require": "off",
+      "max-len": "off",
   },
   globals: {}
 }
