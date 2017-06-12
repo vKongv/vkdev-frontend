@@ -2,7 +2,7 @@
 <div>
     <section>
         <div class="columns ph5-l ph0 pv3">
-            <div class="posts" v-for="(postsToDisplay, index) in posts">
+            <div class="posts w-30-l w-90 center" v-for="(postsToDisplay, index) in posts">
                 <div class="post pa3" v-for="(post, index) in postsToDisplay" v-if="post.title || post.desc" :style="{ backgroundColor:post.bgColor }">
                     <img v-if="post.img" :src="post.img"/>
 
@@ -104,11 +104,6 @@ export default {
 }
 
 .posts {
-    width: 100%;
-
-    @media(--for-desktop) {
-        width: 32%;
-    }
 }
 
 .post {
