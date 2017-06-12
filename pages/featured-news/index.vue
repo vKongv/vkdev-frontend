@@ -1,17 +1,17 @@
 <template>
 <div>
     <section>
-        <div class="columns ph5-l ph3 pv3">
-            <div class="posts" v-for="(postsToDisplay, index) in posts">
-                <div class="post pa3 measure tc" v-for="(post, index) in postsToDisplay" :style="{ backgroundColor:post.bgColor }">
+        <div class="columns ph5-l ph0 pv3">
+            <div class="posts w-30-l w-90 center" v-for="(postsToDisplay, index) in posts">
+                <div class="post pa3" v-for="(post, index) in postsToDisplay" v-if="post.title || post.desc" :style="{ backgroundColor:post.bgColor }">
                     <img v-if="post.img" :src="post.img"/>
 
-                    <span v-if="post.title">
+                    <span v-if="post.title" class="measure">
                         <h3 class="f5 db tracked ttu b tc" :style="{ color:post.fontColor }">{{post.title}}</h3>
                         <hr class="mw5 bb bw1 b--black-10">
                     </span>
 
-                    <div v-if="post.desc" class="lh-copy f6-l f5 fw3 txt-justify tracked" v-html="post.desc" :style="{ color:post.fontColor }"></div>
+                    <div v-if="post.desc" class="lh-copy f6-l f5 fw3 txt-justify tracked measure tc" v-html="post.desc" :style="{ color: post.fontColor }"></div>
                 </div>
             </div>
 
@@ -61,20 +61,22 @@ const posts = [
         bgColor: '#27aaa2',
     },
 ];
-const postToDisplay = [
-    [], [], [],
-];
 
-for (let i = 0; i < posts.length; i += 1) {
-    postToDisplay[i % 3].push(posts[i]);
-}
+const generatePostToDisplay = () => {
+    const postToDisplay = [
+        [], [], [],
+    ];
 
-console.log(postToDisplay);
+    for (let i = 0; i < posts.length; i += 1) {
+        postToDisplay[i % 3].push(posts[i]);
+    }
+    return postToDisplay;
+};
 
 export default {
     data() {
         return {
-            posts: postToDisplay,
+            posts: generatePostToDisplay(),
         };
     },
     components: {
@@ -86,21 +88,29 @@ export default {
 </script>
 
 <style scoped>
+@import '../../assets/main.css';
 
 .columns {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
     color: #ffffff;
     height: auto;
     width: 100%;
+
+    @media(--for-desktop) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 .posts {
-    width: 32%;
 }
 
 .post {
     margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 </style>
