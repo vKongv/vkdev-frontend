@@ -18,7 +18,10 @@ module.exports = {
     /*
     */
     loading: { color: '#3B8070' },
-    css: ['tachyons/css/tachyons.css'],
+    css: ['tachyons/css/tachyons.css', '~assets/main.css'],
+    router: {
+        linkActiveClass: 'active-link'
+    },
     /*
     ** Build configuration
     */
