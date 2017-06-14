@@ -1,20 +1,21 @@
 <template>
 <div>
     <section class="content">
-        <div class="headline pa5" :style="{ backgroundImage: 'url(' + bg + ')'}">
-            <h1 class="f3 f2-l lh-title fw7-l ttu tracked">
-                <span class="headline-text pa2">
-                    Grow your ideas / business with <br/><br/> websites, <br/><br/> mobile apps, <br/><br/> &nbsp; &amp; customise-softwares.
-                    <!-- Always want to be there for your customers? Struggling to find new potential customers? -->
+        <div class="headline" :style="{ backgroundImage: 'url(' + bg + ')'}">
+            <h1 class="headline-text">
+                <span >
+                    <blockquote>
+                        Grow your ideas / business <br/><br/> with websites, mobile apps, <br/><br/> &amp; customise-softwares.
+                    </blockquote>
                 </span>
             </h1>
         </div>
-        <div class="our-principles ph6-l ph3 pv4 white">
-            <div class="principle pa3 measure tc" v-for="(principle, index) in principles">
+        <div class="our-principles">
+            <div class="principle" v-for="(principle, index) in principles">
                 <img class="image" :src="principle.img">
                 </img>
-                <h3 class="f5 db tracked ttu fw4 tc">{{principle.title}}</h3>
-                <p class="description lh-copy f6-l f5 fw3 tc tracked">{{principle.desc}}</p>
+                <h3 class="title">{{principle.title}}</h3>
+                <p class="description">{{principle.desc}}</p>
             </div>
         </div>
     </section>
@@ -29,7 +30,7 @@ import WebFooter from '~components/Footer.vue';
 import p1Picture from '../images/principles/p1.png';
 import p2Picture from '../images/principles/p2.png';
 import p3Picture from '../images/principles/p3.png';
-import bg from '../images/background.png';
+import bg from '../images/background12.png';
 
 const principles = [
     {
@@ -71,53 +72,91 @@ export default {
     margin: auto auto 0;
     width: 100%;
     height: 540px;
-    background-size: cover;
+    background-size: 100%;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     opacity: 0.85;
+}
 
-    & .headline-text {
-        /*background-size: cover;*/
+    .headline-text {
+        font-size: 1.5rem;
         background-color: rgba(255, 255, 255, 0.85);
         font-family:  'Special Elite', cursive;
         opacity: 1;
+        text-transform: uppercase;
+        line-height: 1.25;
+        letter-spacing: .1em;
+
+        @media(--for-desktop) {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
     }
-}
 
 .our-principles {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     display: flex;
     background-color: rgba(0, 0, 0, 0.85);
     min-height: 300px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color: #ffffff;
 
     @media(--for-desktop) {
+        padding-left: 8rem;
+        padding-right: 8rem;
         justify-content: space-between;
         flex-direction: row;
         align-items: stretch;
     }
+}
 
-    & .principle {
+    .principle {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 1rem;
+        text-align: center;
+        max-width: 30em;
 
         @media(--for-desktop) {
             width: 256px;
         }
+    }
 
-        & .image {
+        .image {
             border-radius: 50%;
             width: 150px;
             height: 150px;
         }
 
-        & .description {
+        .title {
+            font-size: 1rem;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: .1em;
+            font-weight: 400;
+            display: block;
         }
-    }
-}
+
+        .description {
+            font-size: 1rem;
+            line-height: 1.5;
+            text-align: center;
+            letter-spacing: .1em;
+            font-weight: 300;
+
+            @media(--for-desktop) {
+                font-size: .875rem;
+
+            }
+        }
 </style>

@@ -1,10 +1,10 @@
 <template>
-    <div class="header bg-white ph5 pv3">
-        <div class="f5 fl w-40 menu">
+    <div class="header">
+        <div class="menu-logo menu">
             <a href="/"><logo></logo></a>
         </div>
-        <div class="f5 fl w-60 menu">
-            <a class="menu-item pt2 pb2 ttu" v-for="header in headers" :href="header.link" > {{ header.title }} </a>
+        <div class="menu-navigation menu">
+            <a class="menu-item" v-for="header in headers" :href="header.link" > {{ header.title }} </a>
         </div>
     </div>
 </template>
@@ -55,6 +55,11 @@ export default {
     letter-spacing: 4px;
     color: #000000;
     flex-direction: column;
+    background-color: #FFFFFF;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 
     @media(--for-desktop) {
         flex-direction: row;
@@ -62,37 +67,45 @@ export default {
     }
 }
 
-.menu {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
+    .menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        font-size: 1rem;
+        float: left;
 
-    @media(--for-desktop) {
-        flex-direction: row;
-    }
-}
-
-.menu-item {
-    display: inline-block;
-    text-decoration: none;
-    text-align: center;
-    color: #000000;
-
-    &:hover {
-        cursor: pointer;
-        opacity: .5;
-        transition: opacity .15s ease-in;
-        border-bottom: 3px solid #000000;
+        @media(--for-desktop) {
+            flex-direction: row;
+        }
     }
 
-    &:visited {
-        color: #000000;
+    .menu-logo {
+        width: 40%;
     }
-}
+    .menu-navigation {
+        width: 60%;
+    }
 
-.logo {
-    width: auto;
-    height: 140px;
-}
+        .menu-item {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            text-transform: uppercase;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            color: #000000;
+
+            &:hover {
+                cursor: pointer;
+                opacity: .5;
+                transition: opacity .15s ease-in;
+                border-bottom: 3px solid #000000;
+            }
+
+            &:visited {
+                color: #000000;
+            }
+        }
+
 </style>
