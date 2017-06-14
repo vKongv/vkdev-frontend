@@ -4,7 +4,14 @@
             <a href="/"><logo></logo></a>
         </div>
         <div class="f5 fl w-60 menu">
-            <a class="menu-item pt2 pb2 ttu" v-for="header in headers" :href="header.link" > {{ header.title }} </a>
+            <nuxt-link
+                class="menu-item pt2 pb2 ttu"
+                v-for="header in headers"
+                :to="header.link"
+                exact
+            >
+                {{ header.title }}
+            </nuxt-link>
         </div>
     </div>
 </template>
