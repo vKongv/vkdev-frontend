@@ -1,12 +1,12 @@
 <template>
-    <div class="container pa2">
-        <article class="fl w-100 w-50-l bg-white br3 pa3 pa4-ns b--black-10" v-for="(member, index) in members">
-            <div class="tc">
-                <img :src="member.img" class="br-100 h5 w5 dib" :title="'photo of ' + member.name" :alt="'photo of ' + member.name">
-                <h1 class="f5 ttu tracked">{{ member.name }}</h1>
-                <hr class="mw3 bb bw1 b--black-10">
+    <div class="team-container" :style="{ 'background-image': 'url(' + pn1 + ')' }">
+        <article class="profile" v-for="(member, index) in members">
+            <div class="member">
+                <img :src="member.img" class="member-img" :title="'photo of ' + member.name" :alt="'photo of ' + member.name">
+                <h1 class="member-name">{{ member.name }}</h1>
+                <hr class="profile-breakline">
             </div>
-            <div class="lh-copy measure center f6 black-70 tc">
+            <div class="member-desc">
                 <i v-html="member.desc">
                 </i>
             </div>
@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import pn1 from '../../images/background4.png';
 import kong from '../../images/vk-team/kong.png';
 import vivien from '../../images/vk-team/vivien.png';
 
@@ -35,6 +36,7 @@ export default {
     data() {
         return {
             members,
+            pn1,
         };
     },
 };
@@ -43,15 +45,65 @@ export default {
 <style scoped>
 @import '../../assets/main.css';
 
-.container {
+.team-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0.5rem;
+    background-size: cover;
 
     @media(--for-desktop) {
         flex-direction: row;
         justify-content: space-between;
     }
 }
+
+    .profile {
+        float: left;
+        width: 100%;
+        /*background-color: #FFFFFF;*/
+        border-radius: 0.5rem;
+        border-color: rgba(0, 0, 0, .1);
+        padding: 1rem;
+        text-align: center;
+
+        @media(--for-desktop) {
+            width: 50%;
+            padding: 2rem;
+        }
+    }
+        .member {
+
+        }
+
+            .member-img {
+                border-radius: 100%;
+                height: 16rem;
+                width: 16rem;
+                display: inline-block;
+            }
+
+            .member-name {
+                font-size: 1rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+            }
+
+            .profile-breakline {
+                max-width: 4rem;
+                border-width: 0.125rem;
+                border-color: rgba(0, 0, 0, .1);
+                border-bottom-style: solid;
+            }
+
+        .member-desc {
+            line-height: 1.5;
+            max-width: 30em;
+            margin-right: auto;
+            margin-left: auto;
+            font-size: 0.875rem;
+            color: rgba(0, 0, 0, .7);
+        }
+
 </style>

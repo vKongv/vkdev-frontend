@@ -1,5 +1,5 @@
 <template>
-    <div class="footer bg-white pv2 ph5-l pv3-l f7">
+    <div class="footer">
         <span>@2017 VK DEV</span>
         <div class="media-item">
             <span>FOLLOW US AT </span> &nbsp;
@@ -37,19 +37,27 @@ export default {
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
+    background-color: #FFFFFF;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 0.75rem;
 
     @media(--for-desktop) {
         flex-direction: row;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
     }
 }
+    .media-item {
+        display: flex;
+        align-items: center;
+    }
 
-.logo {
-    height: 30px;
-}
+        .logo {
+            height: 30px;
+        }
 
-.media-item {
-    display: flex;
-    align-items: center;
-}
 
 </style>

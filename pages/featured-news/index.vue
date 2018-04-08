@@ -1,20 +1,17 @@
 <template>
-<div>
+<div :style="{ 'background-image': 'url(' + pn1 + ')' }">
     <section>
-        <div class="columns ph5-l ph0 pv3">
-            <div class="posts w-30-l w-90 center" v-for="(postsToDisplay, index) in posts">
-                <div class="post pa3" v-for="(post, index) in postsToDisplay" v-if="post.title || post.desc" :style="{ backgroundColor:post.bgColor }">
+        <div class="columns">
+            <div class="posts" v-for="(postsToDisplay, index) in posts">
+                <div class="post" v-for="(post, index) in postsToDisplay" v-if="post.title || post.desc" :style="{ backgroundColor:post.bgColor }">
                     <img v-if="post.img" :src="post.img"/>
-
-                    <span v-if="post.title" class="measure">
-                        <h3 class="f5 db tracked ttu b tc" :style="{ color:post.fontColor }">{{post.title}}</h3>
-                        <hr class="mw5 bb bw1 b--black-10">
+                    <span v-if="post.title" class="title-container">
+                        <h3 class="title" :style="{ color:post.fontColor }">{{post.title}}</h3>
+                        <hr class="title-breakline">
                     </span>
-
-                    <div v-if="post.desc" class="lh-copy f6-l f5 fw3 txt-justify tracked measure tc" v-html="post.desc" :style="{ color: post.fontColor }"></div>
+                    <div v-if="post.desc" class="description" v-html="post.desc" :style="{ color: post.fontColor }"></div>
                 </div>
             </div>
-
         </div>
     </section>
 </div>
@@ -24,6 +21,7 @@
 import WebHeader from '~components/Header.vue';
 import WebFooter from '~components/Footer.vue';
 
+import pn1 from '../../images/portfolios/pattern1.png';
 import googleAssistant from '../../images/featured-news/googleAssistantGIF.gif';
 import androidActiveDevices from '../../images/featured-news/android-active-devices.png';
 
@@ -47,7 +45,7 @@ const posts = [
         bgColor: '#F28D8E',
     },
     {
-        bgColor: '#ffffff',
+        bgColor: '#FFFFFF',
     },
     {
         title: 'Android Surpasses 2 BILLION Monthly Active Devices',
@@ -58,7 +56,7 @@ const posts = [
     {
         // title: 'Quality',
         desc: ' <blockquote><cite>“On Risk: Failure is an option here. If things are not failing, you are not innovating enough.”</cite></blockquote>by Elon Musk, CEO of SpaceX',
-        bgColor: '#27aaa2',
+        bgColor: '#27AAA2',
     },
 ];
 
@@ -77,6 +75,7 @@ export default {
     data() {
         return {
             posts: generatePostToDisplay(),
+            pn1,
         };
     },
     components: {
@@ -93,24 +92,72 @@ export default {
 .columns {
     display: flex;
     flex-direction: column;
-    color: #ffffff;
+    color: #FFFFFF;
     height: auto;
     width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 
     @media(--for-desktop) {
         flex-direction: row;
         justify-content: space-between;
+        padding-left: 4rem;
+        padding-right: 4rem;
     }
 }
 
 .posts {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+
+    @media(--for-desktop) {
+        width: 30%;
+    }
 }
 
-.post {
-    margin-bottom: 1em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+    .post {
+        margin-bottom: 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .title-container {
+        max-width: 30em;
+    }
+
+        .title {
+            font-size: 1rem;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: .1em;
+            font-weight: bold;
+            display: block;
+        }
+
+        .title-breakline {
+            max-width: 16rem;
+            border-width: .125rem;
+            border-color: #000000;
+            opacity: 0.1;
+            border-bottom-style: solid;
+        }
+
+    .description {
+        font-size: 1rem;
+        max-width: 30em;
+        text-align: center;
+        line-height: 1.5;
+        font-weight: 300;
+        letter-spacing: .1em;
+
+        @media(--for-desktop) {
+            font-size: .875rem;
+        }
+    }
 </style>

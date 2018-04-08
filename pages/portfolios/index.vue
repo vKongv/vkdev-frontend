@@ -1,23 +1,23 @@
 <template>
-    <div class="cards ph5-l ph3" :style="{ 'background-image': 'url(' + pn1 + ')' }">
+    <div class="cards" :style="{ 'background-image': 'url(' + pn1 + ')' }">
     <!-- <div class="cards ph5-l ph3"> -->
-        <article class="cards-item br2 ba dark-gray b--black-10 mv4 mt0-l w-30-l w-90 center mh0-l" v-for="( portfolio, index) in portfolios">
+        <article class="cards-item" v-for="( portfolio, index) in portfolios">
             <section>
-                <img :src="portfolio.img" class="card-img db w-100 br2 br--top" :alt="portfolio.title">
-                <div v-if="portfolio.tags" class="pa3 bg-washed-yellow">
-                    <span class="dib mr3" v-for="( t, index) in portfolio.tags">
-                        <a href="#" class="link blue lh-title">
-                            <span class="fw6 underline-hover tracked-wide f6 measure-wide ttl"><b>#</b>{{ t }}</span>
+                <img :src="portfolio.img" class="card-img" :alt="portfolio.title">
+                <div v-if="portfolio.tags" class="card-tags-container">
+                    <span class="card-tags" v-for="( tag, index) in portfolio.tags">
+                        <a href="#" class="tags-link">
+                            <span class="tags"><b>#</b>{{ tag }}</span>
                         </a>
                     </span>
                 </div>
-                <div class="pa2 ph3-ns pb3-ns">
-                    <div class="dt w-100 mt1">
-                        <div class="dtc">
-                            <h1 class="f5 f4-ns tracked mv2 tc ttu"> {{ portfolio.title }} </h1>
-                        </div>
+                <div class="card-desc-container">
+                    <div class="card-desc-title">
+                        <!-- <div class="dtc"> -->
+                            <h1 class="desc-title"> {{ portfolio.title }} </h1>
+                        <!-- </div> -->
                     </div>
-                    <div class="f6 lh-copy measure-l mt2 mid-gray txt-justify tracked measure tc center"> {{ portfolio.desc }} </div>
+                    <div class="card-desc"> {{ portfolio.desc }} </div>
                 </div>
             </section>
         </article>
@@ -80,8 +80,12 @@ export default {
 .cards {
     display: flex;
     flex-direction: column;
+    padding-left: 1rem;
+    padding-right: 1rem;
 
     @media(--for-desktop) {
+        padding-left: 4rem;
+        padding-right: 4rem;
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: wrap;
@@ -90,30 +94,112 @@ export default {
 
     .cards-item {
         background-color: white;
+        border-radius: .25rem;
+        border: 1px solid;
+        color: #333333;
+        border-color: rgba(0, 0, 0, 0.1);
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        margin-right: auto;
+        margin-left: auto;
+        width: 90%;
+
+        @media(--for-desktop) {
+            margin-left:0;
+            margin-right:0;
+            margin-top:0;
+            width: 30%;
+        }
 
         &:hover {
             box-shadow: 5px 8px 10px -5px rgba(0, 0, 0, 0.3);
             cursor: pointer;
         }
+
     }
 
-.card-img {
-    width: 100%;
-    max-height: 20rem;
-    align-self: center;
+        .card-img {
+            width: 100%;
+            max-height: 20rem;
+            align-self: center;
+            display: block;
+            border-radius: 0.25rem;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
 
-    @media(--for-desktop) {
-        max-height: 12rem;
-    }
-}
+            @media(--for-desktop) {
+                max-height: 12rem;
+            }
+        }
 
-.card-desc {
-    width: 100%;
-    height: 35%;
-}
+        .card-tags-container {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
+            background-color: #FFFCEB;
+        }
 
-.card-desc-p {
-  display: inline-block;
-}
+            .card-tags {
+                display: inline-block;
+                margin-right: 1rem;
+            }
+
+                .tags-link {
+                    color: #357EDD;
+                    text-decoration: none;
+                    line-height: 1.25;
+                }
+
+                .tags {
+                    max-width: 34em;
+                    font-size: 0.875rem;
+                    text-transform: lowercase;
+                    font-weight: 600;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+            .card-desc-container {
+                padding: 1.5rem;
+
+                @media(--for-desktop) {
+                    padding: 1rem;
+                }
+            }
+
+                .card-desc-title {
+                    margin-top: 0.25rem;
+                    width: 100%;
+                    /*display: table;*/
+                }
+
+                    .desc-title {
+                        font-size: 1rem;
+                        text-transform: uppercase;
+                        text-align: center;
+                        margin-top: 0.5rem;
+                        margin-bottom: 0.875rem;
+                        letter-spacing: 0.1em;
+
+                        @media(--for-desktop) {
+                            font-size: 1.25rem;
+                        }
+                    }
+
+                .card-desc {
+                    font-size: 0.875rem;
+                    line-height: 1.5;
+                    margin-top: 0.5rem;
+                    color: #555555;
+                    max-width: 30em;
+                    text-align: center;
+                    margin: auto;
+                    letter-spacing: 0.1em;
+                }
+
+
 
 </style>
